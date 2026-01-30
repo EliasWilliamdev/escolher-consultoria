@@ -116,10 +116,10 @@ const Solutions = () => (
           <p className={`text-sm ${idx === 0 ? 'text-slate-300' : 'text-slate-500'} mb-6`}>
             {idx === 0 ? "Um processo estruturado e comprovado que garante assertividade na seleção e reduz significativamente o turnover." : "Apoio estratégico focado em resultados consistentes para sua gestão de talentos."}
           </p>
-          <div className="flex flex-wrap items-center gap-3 mt-auto">
-            <a href="#" className="text-orange-primary text-sm font-bold whitespace-nowrap hover:underline max-w-[120px] w-full text-center">Saiba mais</a>
-            <button className={`px-4 py-2 rounded-md font-semibold text-sm whitespace-nowrap max-w-[150px] w-full text-center ${idx === 0 ? 'bg-orange-primary text-white border border-orange-primary' : 'border border-slate-200 hover:bg-slate-50 transition-colors'}`}>Quero este serviço</button>
-          </div>
+                <div className="flex flex-wrap items-center gap-3 mt-auto">
+                  <a href="#" className="text-orange-primary text-sm font-bold whitespace-nowrap hover:underline max-w-[120px] w-full text-center">Saiba mais</a>
+                  <a href="#contato" className={`px-4 py-2 rounded-md font-semibold text-sm whitespace-nowrap max-w-[150px] w-full text-center ${idx === 0 ? 'bg-orange-primary text-white border border-orange-primary' : 'border border-slate-200 hover:bg-slate-50 transition-colors'}`}>Quero este serviço</a>
+                </div>
         </div>
       ))}
     </div>
@@ -145,9 +145,9 @@ const Solutions = () => (
           </p>
           <div className="flex items-center gap-6 mt-auto">
             <a href="#" className="text-orange-primary text-sm font-bold whitespace-nowrap hover:underline">Saiba mais</a>
-            <button className={`px-4 py-2 rounded-md font-semibold text-sm whitespace-nowrap ${idx === 0 ? 'bg-orange-primary text-white border border-orange-primary' : 'border border-slate-200 hover:bg-slate-50 transition-colors'}`}>
+            <a href="#contato" className={`px-4 py-2 rounded-md font-semibold text-sm whitespace-nowrap ${idx === 0 ? 'bg-orange-primary text-white border border-orange-primary' : 'border border-slate-200 hover:bg-slate-50 transition-colors'}`}>
               Quero este serviço
-            </button>
+            </a>
           </div>
         </div>
       ))}
@@ -306,7 +306,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-white">
+    <section id="contato" className="py-24 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <span className="text-orange-primary font-bold text-xs uppercase tracking-widest">Contato</span>
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mt-4 leading-tight">
