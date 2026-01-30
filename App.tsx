@@ -287,10 +287,18 @@ const Testimonials = () => (
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', phone: '', message: '' });
 
+  const WHATSAPP_NUMBER = '5581999999999'; // +55 81 99999-9999 (ajuste se necessário)
+
+  const openWhatsApp = (text: string) => {
+    const encoded = encodeURIComponent(text);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+    window.open(url, '_blank');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Sending message:', formData);
-    alert('Mensagem enviada com sucesso!');
+    const text = `*Nova solicitação de proposta*%0A%0A*Nome:* ${formData.name}%0A*Empresa:* ${formData.company}%0A*E-mail:* ${formData.email}%0A*Telefone:* ${formData.phone}%0A*Mensagem:* ${formData.message}`;
+    openWhatsApp(text);
   };
 
   return (
@@ -306,7 +314,7 @@ const Contact = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch max-w-7xl mx-auto">
-        <div className="lg:col-span-4 bg-navy-900 text-white p-10 rounded-3xl flex flex-col justify-between">
+          <div className="lg:col-span-4 bg-navy-900 text-white p-10 rounded-3xl flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold mb-8">Vamos Conversar Sobre <br /> <span className="text-orange-primary">Sua Necessidade</span></h3>
             <p className="text-slate-400 text-sm mb-12">Entre em contato conosco para uma consultoria personalizada. Estamos prontos para ajudar sua empresa a encontrar e desenvolver os melhores talentos.</p>
@@ -336,7 +344,10 @@ const Contact = () => {
             </div>
           </div>
 
-          <button className="mt-12 bg-[#25D366] text-white w-full py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+          <button
+            className="mt-12 bg-[#25D366] text-white w-full py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+            onClick={() => openWhatsApp('Olá, gostaria de falar sobre uma consultoria.')}
+          >
             <MessageCircle size={20} /> Fale pelo WhatsApp
           </button>
         </div>
