@@ -287,7 +287,7 @@ const Testimonials = () => (
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', phone: '', message: '' });
 
-  const WHATSAPP_NUMBER = '5581999999999'; // +55 81 99999-9999 (ajuste se necessário)
+  const WHATSAPP_NUMBER = '558199138227'; // +55 81 999138227
 
   const openWhatsApp = (text: string) => {
     const encoded = encodeURIComponent(text);
@@ -295,9 +295,13 @@ const Contact = () => {
     window.open(url, '_blank');
   };
 
+  const buildMessage = (data: { name: string; company: string; email: string; phone: string; message: string }) => {
+    return `*Nova solicitação de proposta*\n\n*Nome:* ${data.name || '-'}\n*Empresa:* ${data.company || '-'}\n*E-mail:* ${data.email || '-'}\n*Telefone:* ${data.phone || '-'}\n*Mensagem:* ${data.message || '-'} `;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `*Nova solicitação de proposta*%0A%0A*Nome:* ${formData.name}%0A*Empresa:* ${formData.company}%0A*E-mail:* ${formData.email}%0A*Telefone:* ${formData.phone}%0A*Mensagem:* ${formData.message}`;
+    const text = buildMessage(formData);
     openWhatsApp(text);
   };
 
@@ -324,7 +328,7 @@ const Contact = () => {
                 <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center"><Phone size={18} className="text-slate-400" /></div>
                 <div>
                   <p className="text-xs text-slate-500">Telefone</p>
-                  <p className="font-bold text-sm">(81) 99999-9999</p>
+                  <p className="font-bold text-sm">(81)9 99138227</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -346,7 +350,10 @@ const Contact = () => {
 
           <button
             className="mt-12 bg-[#25D366] text-white w-full py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all"
-            onClick={() => openWhatsApp('Olá, gostaria de falar sobre uma consultoria.')}
+            onClick={() => {
+              const text = buildMessage(formData);
+              openWhatsApp(text);
+            }}
           >
             <MessageCircle size={20} /> Fale pelo WhatsApp
           </button>
