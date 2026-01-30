@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Users,
   Target,
@@ -287,6 +287,24 @@ const Testimonials = () => (
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', phone: '', message: '' });
 
+  const nameRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    const focusIfHash = () => {
+      if (window.location.hash === '#contato') {
+        // delay to allow smooth scroll to complete
+        setTimeout(() => {
+          nameRef.current?.focus();
+        }, 300);
+      }
+    };
+
+    // focus if page loaded with hash
+    focusIfHash();
+    window.addEventListener('hashchange', focusIfHash);
+    return () => window.removeEventListener('hashchange', focusIfHash);
+  }, []);
+
   const WHATSAPP_NUMBER = '558199138227'; // +55 81 999138227
 
   const openWhatsApp = (text: string) => {
@@ -368,6 +386,8 @@ const Contact = () => {
               <div className="space-y-2">
                 <label className="text-xs font-bold text-slate-700">Nome</label>
                 <input
+                  id="contact-name"
+                  ref={nameRef}
                   type="text"
                   placeholder="Seu nome"
                   className="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 text-sm focus:outline-none focus:ring-1 focus:ring-orange-primary"
