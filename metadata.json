@@ -1,0 +1,8 @@
+{
+  "name": "Escolher - Consultoria de Carreiras",
+  "description": "A high-end landing page for a career consultancy firm featuring recruitment, PDI, outplacement, and corporate training services.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
