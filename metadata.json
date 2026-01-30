@@ -1,6 +1,10 @@
 {
   "name": "Escolher - Consultoria de Carreiras",
-  "description": "A high-end landing page for a career consultancy firm featuring recruitment, PDI, outplacement, and corporate training services.",
+  "title": "Escolher - Consultoria de Carreiras",
+  "description": "Escolher Consultoria de Carreiras — Recrutamento, PDI, Outplacement, Palestras. Soluções estratégicas para empresas e profissionais.",
+  "url": "https://escolher-consultoria.github.io/",
+  "image": "/assets/img/psi.jpeg",
+  "keywords": ["consultoria de carreiras", "recrutamento", "seleção", "PDI", "outplacement", "palestras"],
   "requestFramePermissions": [
     "camera",
     "microphone"
