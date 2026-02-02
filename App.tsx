@@ -22,25 +22,57 @@ import {
 import psiImg from './assets/img/psi.jpeg';
 import psi2Img from './assets/img/psi2.jpeg';
 
-const Header = () => (
-  <header className="sticky top-0 z-50 bg-white shadow-sm py-4 px-6 md:px-12 flex items-center justify-between">
-    <div className="flex items-center gap-2">
-      <div className="flex items-center">
-        <span className="text-orange-primary">★</span>
-        <span className="text-2xl font-bold text-slate-800 ml-1">escolher</span>
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 bg-white shadow-sm py-4 px-6 md:px-12">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center">
+            <span className="text-orange-primary">★</span>
+            <span className="text-2xl font-bold text-slate-800 ml-1">escolher</span>
+          </div>
+          <span className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mt-1 hidden sm:block">Consultoria de RH</span>
+        </div>
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+          <a href="#solucoes" className="hover:text-orange-primary transition-colors">Nossas Soluções</a>
+          <a href="#sobre" className="hover:text-orange-primary transition-colors">Sobre</a>
+          <a href="#depoimentos" className="hover:text-orange-primary transition-colors">Depoimentos</a>
+        </nav>
+        
+        <div className="flex items-center gap-4">
+          <a href="#contato" className="hidden md:block bg-orange-primary text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-all">
+            Fale Conosco
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-slate-600 p-2 hover:bg-slate-50 rounded-lg transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
-      <span className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mt-1 hidden sm:block">Consultoria de Carreiras</span>
-    </div>
-    <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-      <a href="#solucoes" className="hover:text-orange-primary transition-colors">Nossas Soluções</a>
-      <a href="#sobre" className="hover:text-orange-primary transition-colors">Sobre</a>
-      <a href="#depoimentos" className="hover:text-orange-primary transition-colors">Depoimentos</a>
-    </nav>
-    <button className="bg-orange-primary text-white px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-all">
-      Fale Conosco
-    </button>
-  </header>
-);
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-lg py-6 px-6 flex flex-col gap-4 animate-in slide-in-from-top-2 duration-200">
+          <a href="#solucoes" className="text-slate-600 font-medium py-2 hover:text-orange-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Nossas Soluções</a>
+          <a href="#sobre" className="text-slate-600 font-medium py-2 hover:text-orange-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Sobre</a>
+          <a href="#depoimentos" className="text-slate-600 font-medium py-2 hover:text-orange-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Depoimentos</a>
+          <a href="#contato" className="bg-orange-primary text-white px-6 py-3 rounded-lg text-sm font-bold text-center hover:opacity-90 transition-all" onClick={() => setIsMenuOpen(false)}>
+            Fale Conosco
+          </a>
+        </div>
+      )}
+    </header>
+  );
+};
 
 const Hero = () => (
   <section className="bg-navy-900 text-white py-20 px-6 md:px-12 overflow-hidden">
@@ -51,16 +83,16 @@ const Hero = () => (
           <span className="text-orange-primary">resultados consistentes</span>
         </h1>
         <p className="text-slate-300 text-lg mb-8 italic">
-          Escolher Consultoria de Carreiras <br />
+          Escolher Consultoria de RH <br />
           <span className="text-sm">por Psi Alessandra Reis</span>
         </p>
         <div className="flex flex-wrap gap-4">
-          <button className="bg-orange-primary px-8 py-3 rounded-md font-bold flex items-center gap-2 hover:bg-[#e06b45] transition-colors">
+          <a href="#contato" className="bg-orange-primary px-8 py-3 rounded-md font-bold flex items-center gap-2 hover:bg-[#e06b45] transition-colors">
             Solicitar Proposta <ChevronRight size={18} />
-          </button>
-          <button className="border border-white/30 px-8 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
+          </a>
+          <a href="#solucoes" className="border border-white/30 px-8 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
             Conhecer os Serviços
-          </button>
+          </a>
         </div>
       </div>
 
@@ -458,7 +490,7 @@ const Footer = () => (
             <span className="text-4xl font-bold">escolher</span>
           </div>
           <p className="text-slate-400 text-sm max-w-sm">
-            Escolher Consultoria de Carreiras. Escolhas estratégicas, resultados consistentes.
+            Escolher Consultoria de RH. Escolhas estratégicas, resultados consistentes.
           </p>
           <div className="flex gap-4 mt-8">
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange-primary transition-colors">
@@ -503,7 +535,7 @@ const Footer = () => (
       </div>
 
       <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-500 gap-4">
-        <p>© 2024 Escolher Consultoria de Carreiras. Todos os direitos reservados.</p>
+        <p>© 2024 Escolher Consultoria de RH. Todos os direitos reservados.</p>
         <p>por Psi Alessandra Reis</p>
       </div>
     </div>

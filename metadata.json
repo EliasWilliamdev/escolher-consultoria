@@ -1,10 +1,10 @@
 {
-  "name": "Escolher - Consultoria de Carreiras",
-  "title": "Escolher - Consultoria de Carreiras",
-  "description": "Escolher Consultoria de Carreiras — Recrutamento, PDI, Outplacement, Palestras. Soluções estratégicas para empresas e profissionais.",
+  "name": "Escolher - Consultoria de RH",
+  "title": "Escolher - Consultoria de RH",
+  "description": "Escolher Consultoria de RH — Recrutamento, PDI, Outplacement, Palestras. Soluções estratégicas para empresas e profissionais.",
   "url": "https://escolher-consultoria.github.io/",
   "image": "/assets/img/psi.jpeg",
-  "keywords": ["consultoria de carreiras", "recrutamento", "seleção", "PDI", "outplacement", "palestras"],
+  "keywords": ["consultoria de RH", "recrutamento", "seleção", "PDI", "outplacement", "palestras"],
   "requestFramePermissions": [
     "camera",
     "microphone"
