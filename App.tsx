@@ -17,7 +17,9 @@ import {
   CheckCircle2,
   Linkedin,
   Instagram,
-  MailIcon
+  MailIcon,
+  Menu,
+  X
 } from 'lucide-react';
 import psiImg from './assets/img/psi.jpeg';
 import psi2Img from './assets/img/psi2.jpeg';
