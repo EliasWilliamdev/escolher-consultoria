@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import psiImg from './assets/img/psi.jpeg';
 import psi2Img from './assets/img/psi2.jpeg';
+import escolherLogo from './assets/img/escolher.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,11 +32,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-sm py-4 px-6 md:px-12">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="flex items-center">
-            <span className="text-orange-primary">★</span>
-            <span className="text-2xl font-bold text-slate-800 ml-1">escolher</span>
-          </div>
-          <span className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mt-1 hidden sm:block">Consultoria de RH</span>
+          <img src={escolherLogo} alt="Escolher Consultoria de RH" className="h-14 w-auto object-contain" />
         </div>
         
         {/* Desktop Navigation */}
@@ -487,9 +484,8 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
         <div className="lg:col-span-2">
-          <div className="flex items-center gap-2 mb-6">
-            <span className="text-orange-primary text-4xl">★</span>
-            <span className="text-4xl font-bold">escolher</span>
+          <div className="mb-6 bg-white p-3 rounded-xl inline-block">
+            <img src={escolherLogo} alt="Escolher Consultoria" className="h-12 w-auto object-contain" />
           </div>
           <p className="text-slate-400 text-sm max-w-sm">
             Escolher Consultoria de RH. Escolhas estratégicas, resultados consistentes.
