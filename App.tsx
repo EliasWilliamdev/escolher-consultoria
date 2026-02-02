@@ -32,7 +32,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-sm py-4 px-6 md:px-12">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src={escolherLogo} alt="Escolher Consultoria de RH" className="h-14 w-auto object-contain" />
+          <img src={escolherLogo} alt="Escolher Consultoria de RH" className="h-14 w-auto object-contain border-0 outline-none ring-0 drop-shadow-none bg-transparent select-none rounded-none" />
         </div>
         
         {/* Desktop Navigation */}
@@ -485,7 +485,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
         <div className="lg:col-span-2">
           <div className="mb-6 inline-block">
-            <img src={escolherLogo} alt="Escolher Consultoria" className="h-12 w-auto object-contain brightness-110 contrast-125" />
+            <img src={escolherLogo} alt="Escolher Consultoria" className="h-12 w-auto object-contain brightness-110 contrast-125 border-0 outline-none ring-0 drop-shadow-none bg-transparent select-none rounded-none" />
           </div>
           <p className="text-slate-400 text-sm max-w-sm">
             Escolher Consultoria de RH. Escolhas estratégicas, resultados consistentes.
