@@ -484,8 +484,8 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
         <div className="lg:col-span-2">
-          <div className="mb-6 bg-white p-3 rounded-xl inline-block">
-            <img src={escolherLogo} alt="Escolher Consultoria" className="h-12 w-auto object-contain" />
+          <div className="mb-6 inline-block">
+            <img src={escolherLogo} alt="Escolher Consultoria" className="h-12 w-auto object-contain brightness-110 contrast-125" />
           </div>
           <p className="text-slate-400 text-sm max-w-sm">
             Escolher Consultoria de RH. Escolhas estratégicas, resultados consistentes.
