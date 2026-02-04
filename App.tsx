@@ -24,6 +24,7 @@ import {
 import psiImg from './assets/img/psi.jpeg';
 import psi2Img from './assets/img/psi2.jpeg';
 import escolherLogo from './assets/img/escolher.png';
+import escolherLogoFooter from './assets/img/escolherlogofooter.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -485,7 +486,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
         <div className="lg:col-span-2">
           <div className="mb-6 inline-block">
-            <img src={escolherLogo} alt="Escolher Consultoria" className="h-12 w-auto object-contain brightness-110 contrast-125 border-0 outline-none ring-0 drop-shadow-none bg-transparent select-none rounded-none" />
+            <img src={escolherLogoFooter} alt="Escolher Consultoria" className="h-28 md:h-32 w-auto object-contain brightness-[1.15] contrast-[1.3] border-0 outline-none ring-0 drop-shadow-none bg-transparent select-none rounded-none" />
           </div>
           <p className="text-slate-400 text-sm max-w-sm">
             Escolher Consultoria de RH. Escolhas estratégicas, resultados consistentes.
